@@ -1,3 +1,4 @@
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
 
 function App() {
@@ -7,13 +8,19 @@ function App() {
     console.log(item);
   };
   return (
-    <div>
-      <ListGroup
-        items={listItems}
-        heading={"Fruits"}
-        onSelectItem={handleSelectItem}
-      />
-    </div>
+    <>
+      <div>
+        <ListGroup
+          items={listItems}
+          heading={"Fruits"}
+          onSelectItem={handleSelectItem}
+        />
+      </div>
+
+      <div>
+        <Alert>Hello World!</Alert>
+      </div>
+    </>
   );
 }
 

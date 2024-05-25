@@ -7,7 +7,7 @@ interface ListGroupProps {
 }
 
 function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
-  // Hook
+  // Hook, change of State makes the component rerender
   const [selectedIndex, setSelectedIndex] = useState(-1); // basicly getter and setter to state provided by js
 
   return (
