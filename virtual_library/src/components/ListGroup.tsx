@@ -3,11 +3,12 @@ import { useState } from "react";
 interface ListGroupProps {
   items: string[];
   heading: string;
+  onSelectItem: (item: string) => void;
 }
 
-function ListGroup({ items, heading }: ListGroupProps) {
+function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
   // Hook
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [selectedIndex, setSelectedIndex] = useState(-1); // basicly getter and setter to state provided by js
 
   return (
     <>
@@ -19,6 +20,7 @@ function ListGroup({ items, heading }: ListGroupProps) {
             className={`list-group-item ${selectedIndex === index && "active"}`}
             onClick={() => {
               setSelectedIndex(index);
+              onSelectItem(item);
             }}
             key={item}
           >
