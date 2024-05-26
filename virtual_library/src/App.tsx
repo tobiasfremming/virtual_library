@@ -2,6 +2,7 @@ import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import ListGroup from "./components/ListGroup";
+import Like from "./components/Like/Like";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -38,6 +39,10 @@ function App() {
         <Alert alert={alertVisible} onClose={() => setAlertVisible(false)}>
           Hello World!
         </Alert>
+      </div>
+
+      <div>
+        <Like onClick={() => console.log("clicked")} />
       </div>
     </>
   );

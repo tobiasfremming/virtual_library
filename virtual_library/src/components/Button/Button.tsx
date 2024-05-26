@@ -1,4 +1,5 @@
 import React from "react";
+import "./Button.css";
 
 interface ButtonProps {
   onClick: () => void;
@@ -7,7 +8,7 @@ interface ButtonProps {
 
 const Button = ({ onClick, text }: ButtonProps) => {
   return (
-    <button onClick={onClick} type="button" className="btn btn-secondary">
+    <button onClick={onClick} type="button" className="button hover">
       {text}
     </button>
   );
