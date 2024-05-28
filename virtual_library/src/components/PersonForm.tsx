@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const PersonForm = () => {
   // Better to use ref, so you dont have tu update all the time.
   //   const nameRef = useRef<HTMLInputElement>(null);
   //   const ageRef = useRef<HTMLInputElement>(null);
   //   const person = { name: "", age: 0 };
 
-  const [person, setPerson] = useState<{ name: string; age: number }>({
+  const [person, setPerson] = useState<{
+    name: string;
+    age: string | number | readonly string[] | undefined;
+  }>({
     name: "",
-    age: 0,
+    age: "",
   });
 
   const handleSubmit = (event: React.FormEvent) => {
@@ -32,6 +35,7 @@ const Form = () => {
           onChange={(event) =>
             setPerson({ ...person, name: event.target.value })
           }
+          value={person.name}
           id="name"
           type="text"
           className="form-control"
@@ -45,6 +49,7 @@ const Form = () => {
           onChange={(event) =>
             setPerson({ ...person, age: parseInt(event.target.value) })
           }
+          value={person.age}
           id="age"
           type="number"
           className="form-control"
@@ -55,4 +60,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default PersonForm;

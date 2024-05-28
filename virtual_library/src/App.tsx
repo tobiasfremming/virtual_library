@@ -6,7 +6,7 @@ import Like from "./components/Like/Like";
 import Cart from "./components/Cart";
 import NavBar from "./components/NavBar";
 import ExpandableText from "./components/ExpandableText";
-import Form from "./components/Form";
+import PersonForm from "./components/PersonForm";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -59,7 +59,7 @@ function App() {
       </div>
 
       <div>
-        <Form />
+        <PersonForm />
       </div>
     </>
   );
