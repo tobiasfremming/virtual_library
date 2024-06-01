@@ -1,5 +1,13 @@
 import { FieldValues, useForm } from "react-hook-form";
 
+interfact FormData {
+  name: string;
+  age: number;
+
+
+}
+
+
 const PersonForm = () => {
   // Better to use ref, so you dont have tu update all the time.
   //   const nameRef = useRef<HTMLInputElement>(null);
@@ -18,7 +26,7 @@ const PersonForm = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
+  } = useForm<FormData>();
 
   // const handleSubmit = (event: React.FormEvent) => {
   //   event.preventDefault();
