@@ -14,7 +14,11 @@ const PersonForm = () => {
   //   age: "",
   // });
 
-  const { register } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   // const handleSubmit = (event: React.FormEvent) => {
   //   event.preventDefault();
@@ -36,7 +40,7 @@ const PersonForm = () => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
@@ -46,7 +50,14 @@ const PersonForm = () => {
           id="name"
           type="text"
           className="form-control"
-        ></input>
+        />
+
+        {errors.name?.type === "required" && (
+          <p className="text-danger">The name field is required</p>
+        )}
+        {errors.name?.type === "minLength" && (
+          <p className="text-danger">The name must be at least 3 characters</p>
+        )}
       </div>
       <div className="mb-3">
         <label htmlFor="age" className="form-label">
