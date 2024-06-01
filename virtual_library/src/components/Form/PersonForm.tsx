@@ -1,12 +1,9 @@
 import { FieldValues, useForm } from "react-hook-form";
 
-interfact FormData {
+interface FormData {
   name: string;
   age: number;
-
-
 }
-
 
 const PersonForm = () => {
   // Better to use ref, so you dont have tu update all the time.
