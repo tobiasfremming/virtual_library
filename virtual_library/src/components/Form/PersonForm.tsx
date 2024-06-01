@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 
 const PersonForm = () => {
   // Better to use ref, so you dont have tu update all the time.
@@ -27,19 +27,22 @@ const PersonForm = () => {
   //   person.age = age;
   //   console.log(person);
   // };
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log("submitted");
+  // const handleSubmit = (event: React.FormEvent) => {
+  //   event.preventDefault();
+  //   console.log("submitted");
+  // };
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
   };
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
+    <form onSubmit={onSubmit}>
       <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
         </label>
         <input
-          {...register("name")}
+          {...register("name", { required: true, minLength: 3 })}
           id="name"
           type="text"
           className="form-control"

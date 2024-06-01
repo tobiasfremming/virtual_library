@@ -6,7 +6,7 @@ import Like from "./components/Like/Like";
 import Cart from "./components/Cart";
 import NavBar from "./components/NavBar";
 import ExpandableText from "./components/ExpandableText";
-import PersonForm from "./components/PersonForm";
+import PersonForm from "./components/Form/PersonForm";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
