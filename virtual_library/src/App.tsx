@@ -9,8 +9,9 @@ import ExpandableText from "./components/ExpandableText";
 import PersonForm from "./components/Form/PersonForm";
 import ExpenseList from "./components/Expense/ExpenseList";
 import ExpenseFilter from "./components/Expense/ExpenseFilter";
+import ExpenseForm from "./components/Expense/ExpenseForm";
 
-export const categories: [string] = [
+export const categories = [
   "Groceries",
   "Education",
   "Health",
@@ -86,6 +87,10 @@ function App() {
 
       <div>
         <PersonForm />
+      </div>
+
+      <div className="mb-5">
+        <ExpenseForm />
       </div>
 
       <div>
