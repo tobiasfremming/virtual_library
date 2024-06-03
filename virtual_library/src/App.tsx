@@ -7,6 +7,7 @@ import Cart from "./components/Cart";
 import NavBar from "./components/NavBar";
 import ExpandableText from "./components/ExpandableText";
 import PersonForm from "./components/Form/PersonForm";
+import ExpenseList from "./components/ExpenseList";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -27,6 +28,13 @@ function App() {
   };
 
   const [cartItems, setCartItems] = useState(["apples", "bananas", "oranges"]);
+
+  const expenses = [
+    { id: 1, description: "Coffee", amount: 20, category: "Food" },
+    { id: 2, description: "Books", amount: 50, category: "Education" },
+    { id: 3, description: "Gym", amount: 100, category: "Health" },
+  ];
+
   return (
     <>
       <div>
@@ -60,6 +68,10 @@ function App() {
 
       <div>
         <PersonForm />
+      </div>
+
+      <div>
+        <ExpenseList expenses={expenses} onDelete={(id) => console.log(id)} />
       </div>
     </>
   );
