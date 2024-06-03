@@ -11,6 +11,7 @@ import ExpenseList from "./components/Expense/ExpenseList";
 import ExpenseFilter from "./components/Expense/ExpenseFilter";
 import ExpenseForm from "./components/Expense/ExpenseForm";
 import categories from "./categories";
+import Bionic from "./components/Bionic";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -30,7 +31,7 @@ function App() {
     console.log(text);
   };
 
-  // Expenses: ========================================
+  // Expenses: =======================================
 
   const [cartItems, setCartItems] = useState(["apples", "bananas", "oranges"]);
 
@@ -51,6 +52,10 @@ function App() {
       <div>
         <NavBar cartItemsCount={cartItems.length} />
         <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      </div>
+
+      <div>
+        <Bionic />
       </div>
       <div>
         <ListGroup
