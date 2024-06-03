@@ -10,15 +10,7 @@ import PersonForm from "./components/Form/PersonForm";
 import ExpenseList from "./components/Expense/ExpenseList";
 import ExpenseFilter from "./components/Expense/ExpenseFilter";
 import ExpenseForm from "./components/Expense/ExpenseForm";
-
-export const categories = [
-  "Groceries",
-  "Education",
-  "Health",
-  "Transportation",
-  "Utilities",
-  "Entertainment",
-];
+import categories from "./categories";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
