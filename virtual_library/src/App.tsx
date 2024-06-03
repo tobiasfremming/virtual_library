@@ -29,11 +29,11 @@ function App() {
 
   const [cartItems, setCartItems] = useState(["apples", "bananas", "oranges"]);
 
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     { id: 1, description: "Coffee", amount: 20, category: "Food" },
     { id: 2, description: "Books", amount: 50, category: "Education" },
     { id: 3, description: "Gym", amount: 100, category: "Health" },
-  ];
+  ]);
 
   return (
     <>
@@ -71,7 +71,12 @@ function App() {
       </div>
 
       <div>
-        <ExpenseList expenses={expenses} onDelete={(id) => console.log(id)} />
+        <ExpenseList
+          expenses={expenses}
+          onDelete={(id: number) => {
+            setExpenses(expenses.filter((expense) => expense.id !== id));
+          }}
+        />
       </div>
     </>
   );
