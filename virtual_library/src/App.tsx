@@ -7,7 +7,17 @@ import Cart from "./components/Cart";
 import NavBar from "./components/NavBar";
 import ExpandableText from "./components/ExpandableText";
 import PersonForm from "./components/Form/PersonForm";
-import ExpenseList from "./components/ExpenseList";
+import ExpenseList from "./components/Expense/ExpenseList";
+import ExpenseFilter from "./components/Expense/ExpenseFilter";
+
+export const categories: [string] = [
+  "Groceries",
+  "Education",
+  "Health",
+  "Transportation",
+  "Utilities",
+  "Entertainment",
+];
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -27,13 +37,21 @@ function App() {
     console.log(text);
   };
 
+  // Expenses: ========================================
+
   const [cartItems, setCartItems] = useState(["apples", "bananas", "oranges"]);
 
   const [expenses, setExpenses] = useState([
-    { id: 1, description: "Coffee", amount: 20, category: "Food" },
+    { id: 1, description: "Coffee", amount: 20, category: "Groceries" },
     { id: 2, description: "Books", amount: 50, category: "Education" },
     { id: 3, description: "Gym", amount: 100, category: "Health" },
   ]);
+
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
+
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((expense) => expense.category === selectedCategory)
+    : expenses;
 
   return (
     <>
@@ -71,8 +89,16 @@ function App() {
       </div>
 
       <div>
+        <div className="mb-3">
+          <ExpenseFilter
+            onSelectCategory={(category: string) =>
+              setSelectedCategory(category)
+            }
+          />
+        </div>
+
         <ExpenseList
-          expenses={expenses}
+          expenses={visibleExpenses}
           onDelete={(id: number) => {
             setExpenses(expenses.filter((expense) => expense.id !== id));
           }}
