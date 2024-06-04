@@ -12,6 +12,7 @@ import ExpenseFilter from "./components/Expense/ExpenseFilter";
 import ExpenseForm from "./components/Expense/ExpenseForm";
 import categories from "./categories";
 import Bionic from "./components/Bionic";
+import ProductList from "./components/ProductList";
 
 function App() {
   const [alertVisible, setAlertVisible] = useState(false);
@@ -46,6 +47,8 @@ function App() {
   const visibleExpenses = selectedCategory
     ? expenses.filter((expense) => expense.category === selectedCategory)
     : expenses;
+
+  const [category, setCategory] = useState<string>("");
 
   return (
     <>
@@ -112,6 +115,17 @@ function App() {
             setExpenses(expenses.filter((expense) => expense.id !== id));
           }}
         />
+      </div>
+      <div>
+        <select
+          className="form-select"
+          onChange={(event) => setCategory(event.target.value)}
+        >
+          <option value=""></option>
+          <option value="Clothing">Clothing</option>
+          <option value="Household">Household</option>
+        </select>
+        <ProductList category={category} />
       </div>
     </>
   );
