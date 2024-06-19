@@ -8,5 +8,36 @@
     margin: 10px;
     text-align: center;
     vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;  /* Ensures border is included in the element's dimensions */
+}
 
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(254, 0, 0);
+    border: 2px solid black;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+.triangle {
+    
+    border-left: 50px solid transparent;
+    border-right: 50px solid rgb(0, 0,  0);
+    border-bottom: 100px solid rgb(255, 0, 0);
+    border: 2px solid black;
+    box-sizing: border-box;
+    
+}
+.question-mark {
+    font-size: 64px; /* Adjust size as needed */
+    color: black;    /* Color of the question mark */
+}
+
+
+
+.rotate {
+    transform: rotate(45deg);
 }
