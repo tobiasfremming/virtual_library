@@ -1,0 +1,12 @@
+.square {
+    background-color: rgb(255, 0, 0);
+    border: 2px solid black; /* Dark edges */
+    box-sizing: border-box;  /* Ensures border is included in the element's dimensions */
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    vertical-align: middle;
+
+}
