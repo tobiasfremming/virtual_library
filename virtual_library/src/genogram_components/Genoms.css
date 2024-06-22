@@ -23,13 +23,23 @@
 }
 
 .triangle {
-    
+    width: 0;
+    height: 0;
+    border-left: 55px solid transparent;
+    border-right: 55px solid transparent;
+    border-bottom: 95px solid black; /* Black border */
+    position: relative;
+}
+
+.inner-triangle {
+    width: 0;
+    height: 0;
     border-left: 50px solid transparent;
-    border-right: 50px solid rgb(0, 0,  0);
-    border-bottom: 100px solid rgb(255, 0, 0);
-    border: 2px solid black;
-    box-sizing: border-box;
-    
+    border-right: 50px solid transparent;
+    border-bottom: 87px solid red; /* Red fill */
+    position: absolute;
+    top: 4px; /* Centering vertically */
+    left: -50px; /* Centering horizontally */
 }
 .question-mark {
     font-size: 64px; /* Adjust size as needed */
